@@ -105,7 +105,7 @@ SMTP_HOST=asmtp.mail.hostpoint.ch
 SMTP_PORT=465
 SMTP_SECURE=true
 SMTP_USER=go@impactflow.ch
-SMTP_PASSWORD=@Nauta19671906@
+SMTP_PASSWORD=<separat per E-Mail erhalten>
 ```
 
 ### 5b) Buchungs-E-Mails von Cal.com deaktivieren
