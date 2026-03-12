@@ -25,7 +25,7 @@ sudo mkdir -p /opt/calcom-branding
 # Dateien kopieren (per SCP von Jean Pierres Mac)
 # ODER: Git-Repo klonen (empfohlen)
 cd /opt
-sudo git clone <REPO-URL> calcom-branding
+sudo git clone https://github.com/MyImpactFlow/calcom-branding.git calcom-branding
 ```
 
 **Empfehlung Git:** So kann Jean Pierre Änderungen pushen und du machst nur:
