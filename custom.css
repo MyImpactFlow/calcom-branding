@@ -1,0 +1,82 @@
+/* ============================================
+   ImpactFlow Cal.com Branding — Custom CSS
+   Stand: 2026-03-12
+
+   Farben:
+   - Grau (Primaer):  #878787
+   - Pink (Akzent):   #f29cb6
+   - Mint (Akzent):   #9dd3c7
+   ============================================ */
+
+/* ------------------------------------------
+   1. 12h/24h Toggle ausblenden
+   Zeigt nur 24h-Format, kein Toggle sichtbar
+   ------------------------------------------ */
+.ml-auto.rtl\:mr-auto:has(button[aria-checked]) {
+  display: none !important;
+}
+
+/* ------------------------------------------
+   2. Zeitslot Verfuegbarkeits-Dots
+   Standard: gruen (bg-emerald-400)
+   Neu: ImpactFlow Pink
+   ------------------------------------------ */
+span.bg-emerald-400 {
+  background-color: #f29cb6 !important;
+}
+
+/* ------------------------------------------
+   3. "Brauchst du Hilfe?" Button
+   Styling an ImpactFlow anpassen
+   ------------------------------------------ */
+a[href*="troubleshoot"] > div {
+  background-color: #f29cb6 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+}
+
+/* ------------------------------------------
+   4. Verfuegbare Tage — dezenter Pink-Hauch
+   Standard: bg-gray-200 (#e5e7eb)
+   Neu: Leichtes Pink fuer gebrandeten Look
+   ------------------------------------------ */
+button:not([disabled]).bg-\[rgb\(229\2c 231\2c 235\)\],
+button:not([disabled])[style*="background-color: rgb(229, 231, 235)"] {
+  background-color: #fce8ef !important;
+}
+
+/* ------------------------------------------
+   5. Heute-Kreis — wird schon von Cal.com
+   Brand Color gesteuert (#f29cb6), nur zur
+   Sicherheit nochmal explizit setzen
+   ------------------------------------------ */
+/* Cal.com nutzt --cal-brand fuer den Heute-Kreis,
+   das wird ueber die Darstellung-Einstellungen gesteuert */
+
+/* ------------------------------------------
+   6. Allgemeine Typografie-Verbesserungen
+   ------------------------------------------ */
+/* Buchungsseiten-Titel etwas groesser */
+h1, [data-testid="event-title"] {
+  font-weight: 600 !important;
+}
+
+/* ------------------------------------------
+   7. Footer / Powered by Cal.com
+   Wird ueber Cal.com-Einstellungen deaktiviert,
+   hier als Fallback nochmal versteckt
+   ------------------------------------------ */
+[data-testid="powered-by-calcom"],
+a[href*="cal.com/signup"] {
+  display: none !important;
+}
+
+/* ------------------------------------------
+   NOTIZEN:
+
+   - Selektoren basieren auf Cal.com v4.x (Maerz 2026)
+   - Bei Updates: Selektoren pruefen falls was nicht greift
+   - Neue Anpassungen einfach unten anfuegen
+   - Testen: Claude Code injiziert CSS live im Browser
+   ------------------------------------------ */
