@@ -24,8 +24,14 @@
     // Textersetzungen (Original -> Neu)
     textReplacements: {
       "Brauchst du Hilfe?": "Hilfe bei der Buchung?",
-      // Weitere Texte hier einfuegen:
-      // "Alter Text": "Neuer Text",
+      "Indem Sie fortfahren, stimmen Sie unseren":
+        "Indem du fortfährst, stimmst du unseren",
+    },
+
+    // Placeholder-Ersetzungen (Sie-Form -> Du-Form)
+    placeholderReplacements: {
+      "Bitten teilen Sie Notizen zur Vorbereitung des Termins, falls nötig.":
+        "Teile gerne Notizen zur Vorbereitung des Termins mit.",
     },
 
     // Elemente die ausgeblendet werden sollen (CSS Selektoren)
@@ -80,12 +86,41 @@
   }
 
   // ============================================
+  // Placeholder-Texte ersetzen (Sie -> Du)
+  // ============================================
+  function replacePlaceholders() {
+    document
+      .querySelectorAll("input[placeholder], textarea[placeholder]")
+      .forEach(function (el) {
+        for (var original in CONFIG.placeholderReplacements) {
+          if (el.placeholder === original) {
+            el.placeholder = CONFIG.placeholderReplacements[original];
+          }
+        }
+      });
+  }
+
+  // ============================================
+  // Verfuegbare Tage dezent pink faerben
+  // (Fallback falls CSS-Selektor nicht greift)
+  // ============================================
+  function recolorAvailableDays() {
+    document
+      .querySelectorAll('button[data-testid="day"].bg-emphasis')
+      .forEach(function (btn) {
+        btn.style.backgroundColor = "#fce8ef";
+      });
+  }
+
+  // ============================================
   // Alle Anpassungen ausfuehren
   // ============================================
   function applyBranding() {
     replaceTexts();
+    replacePlaceholders();
     hideElements();
     recolorDots();
+    recolorAvailableDays();
   }
 
   // ============================================

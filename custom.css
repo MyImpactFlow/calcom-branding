@@ -38,11 +38,10 @@ a[href*="troubleshoot"] > div {
 
 /* ------------------------------------------
    4. Verfuegbare Tage — dezenter Pink-Hauch
-   Standard: bg-gray-200 (#e5e7eb)
+   Standard: bg-emphasis (#e5e7eb)
    Neu: Leichtes Pink fuer gebrandeten Look
    ------------------------------------------ */
-button:not([disabled]).bg-\[rgb\(229\2c 231\2c 235\)\],
-button:not([disabled])[style*="background-color: rgb(229, 231, 235)"] {
+button[data-testid="day"].bg-emphasis {
   background-color: #fce8ef !important;
 }
 
